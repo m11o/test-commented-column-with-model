@@ -1,24 +1,10 @@
-# README
+annotate gemにおいて、コメント付きカラムを変更した場合に、正しくannotationが作成されないバグがあった。
+それを検証するために作成した検証用のテストコード
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 再現方法
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. `rails new` で新規プロジェクトを作成(MySQLを使用する)
+2. annotate gemを追加
+3. コメント付きのカラムをもつテーブルを作成
+4. コメント付きカラムをnon-nullに変更
+5. annotationが更新されないことを確認
